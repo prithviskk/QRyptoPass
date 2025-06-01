@@ -28,17 +28,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-<<<<<<< HEAD
-       <Navbar />
-        <main className="ml-[70px]">{children}</main>
-=======
         <Navbar />
         {/* main should expand to fill remaining space */}
         <main className="flex-grow ml-[70px]">
           {children}
         </main>
         <Footer />
->>>>>>> b37831452b8f465e8f77fd1816d4d738f6c563c5
       </body>
     </html>
   );

@@ -17,6 +17,8 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select";
+import { FcGoogle } from "react-icons/fc";  // Google icon
+import { FaFacebookF } from "react-icons/fa";
 
 export default function AuthForm() {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -35,11 +37,11 @@ export default function AuthForm() {
 
   const primaryColor = "bg-[#DA7B93] hover:bg-[#C96B84]";
 
-  const handleChange = (e) => {
+  const handleChange = (e : any ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e : any ) => {
     e.preventDefault();
     if (!isSignIn && formData.password !== formData.confirmPassword) {
       alert("Passwords do not match");
@@ -51,7 +53,7 @@ export default function AuthForm() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#2F4454] to-[#1C3334] p-6">
-      <div className="relative w-full max-w-4xl h-[600px] rounded-xl shadow-lg overflow-hidden bg-white">
+      <div className="relative w-full  h-screen rounded-xl shadow-lg overflow-hidden bg-white">
         {/* Wrapper for panels */}
         <div className="relative w-full h-full overflow-hidden">
 
@@ -59,7 +61,7 @@ export default function AuthForm() {
           <div
             className={`
               absolute top-0 w-1/2 h-full
-              bg-gradient-to-b from-[#DA7B93] to-[#376E6F]
+              bg-gradient-to-b from-[#995555] to-[#2E151B]
               text-white
               flex flex-col justify-center items-center
               px-10
@@ -77,7 +79,7 @@ export default function AuthForm() {
             </p>
             <Button
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#2E151B] transition-colors"
+              className=' bg-[#995555] hover:bg-[#C96B84]   transition-colors'
               onClick={toggleMode}
             >
               {isSignIn ? "SIGN UP" : "SIGN IN"}
@@ -96,20 +98,30 @@ export default function AuthForm() {
               ${isSignIn ? "translate-x-full z-10" : "translate-x-0 z-20"}
             `}
           >
+            <div className="flex"></div>
             <CardHeader>
-              <CardTitle className="text-2xl mb-6">{isSignIn ? "Sign In" : "Create Account"}</CardTitle>
+              <CardTitle className="text-2xl mb-6 flex justify-center ">{isSignIn ? "Sign In" : "Create Account"}</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="flex gap-2 mb-4">
-                <Button variant="outline">Google</Button>
-                <Button variant="outline">Facebook</Button>
-              </div>
-              <Separator className="mb-4" />
+              <div className="flex justify-center gap-7 mb-4">
+                <Button variant="outline" className="flex items-center gap-2">
+    <FcGoogle size={20} />
+    Google
+  </Button>
+  <Button variant="outline" className="flex items-center gap-2">
+    <FaFacebookF size={20} />
+    Facebook
+  </Button>
+</div>
+              <div className="relative mb-4">
+    <hr className="border-gray-300" />
+    <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 text-gray-500">or</span>
+  </div>
 
               <form onSubmit={handleSubmit}>
                 {!isSignIn && (
                   <>
-                    <div className="mb-4">
+                    <div className="mb-4 grid gap-2">
                       <Label>Role</Label>
                       <Select
                         onValueChange={(value) => setRole(value)}
@@ -126,7 +138,7 @@ export default function AuthForm() {
                     </div>
 
                     <div className="grid gap-4">
-                      <div>
+                      <div className=" grid gap-2">
                         <Label>Username</Label>
                         <Input
                           type="text"
@@ -137,7 +149,7 @@ export default function AuthForm() {
                           required
                         />
                       </div>
-                      <div>
+                      <div className=" grid gap-2">
                         <Label>Email</Label>
                         <Input
                           type="email"
@@ -148,7 +160,7 @@ export default function AuthForm() {
                           required
                         />
                       </div>
-                      <div>
+                      <div className=" grid gap-2">
                         <Label>Password</Label>
                         <Input
                           type="password"
@@ -159,7 +171,7 @@ export default function AuthForm() {
                           required
                         />
                       </div>
-                      <div>
+                      <div className=" grid gap-2">
                         <Label>Retype Password</Label>
                         <Input
                           type="password"
@@ -173,7 +185,7 @@ export default function AuthForm() {
 
                       {role === "buyer" ? (
                         <>
-                          <div>
+                          <div className=" grid gap-2">
                             <Label>Age</Label>
                             <Input
                               type="number"
@@ -184,7 +196,7 @@ export default function AuthForm() {
                               required
                             />
                           </div>
-                          <div>
+                          <div className=" grid gap-2">
                             <Label>Region</Label>
                             <Input
                               type="text"
@@ -198,7 +210,7 @@ export default function AuthForm() {
                         </>
                       ) : (
                         <>
-                          <div>
+                          <div className=" grid gap-2">
                             <Label>Organization Name / Theatre Name</Label>
                             <Input
                               type="text"
@@ -228,7 +240,7 @@ export default function AuthForm() {
 
                 {isSignIn && (
                   <div className="grid gap-4">
-                    <div>
+                    <div className="grid gap-2">
                       <Label>Email</Label>
                       <Input
                         type="email"
@@ -239,7 +251,7 @@ export default function AuthForm() {
                         required
                       />
                     </div>
-                    <div>
+                    <div className="grid gap-2">
                       <Label>Password</Label>
                       <Input
                         type="password"
