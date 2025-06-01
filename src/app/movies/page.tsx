@@ -132,8 +132,7 @@ const Page = () => {
         </aside>
 
         {/* Cards */}
-       <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ml-0 md:ml-6 max-w-screen-lg mx-auto lg:max-h-[70vh] overflow-y-auto">
-
+        <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ml-0 md:ml-6 max-w-screen-lg mx-auto  max-h-none overflow-visible  md:max-h-[30vh] md:overflow-y-auto">
           {filteredCards.length > 0 ? (
             filteredCards.map((card) => (
               <Card
