@@ -19,7 +19,7 @@ export default function Navbar() {
     <nav
       className={`h-screen ${
         expanded ? "w-[180px]" : "w-[70px]"
-      } bg-[#2E151B] flex flex-col pt-4 fixed left-0 top-0 transition-all duration-300`}
+      } bg-[#2E151B] flex flex-col pt-4 fixed left-0 top-0  transition-all duration-300`}
     >
       {/*menu button */}
       <button
