@@ -20,17 +20,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <Navbar />
-        {/* main should expand to fill remaining space */}
-        <main className="flex-grow ml-[70px]">
+        <main
+          className="mt-[64px] flex-grow"
+          style={{
+            backgroundImage: "linear-gradient(to top, #DADADA, #5E3A43)",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        >
           {children}
         </main>
         <Footer />
