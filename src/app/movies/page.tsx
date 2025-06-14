@@ -132,7 +132,7 @@ const Page = () => {
         </aside>
 
         {/* Cards */}
-       <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ml-0 md:ml-6 max-w-screen-lg mx-auto md:max-h-[30vh] md:overflow-y-auto lg:max-h-[70vh] lg:overflow-y-auto">
+       <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ml-0 md:ml-6 max-w-screen-lg mx-auto md:max-h-[425px] md:overflow-y-auto lg:max-h-[400px] lg:overflow-y-auto">
 
           {filteredCards.length > 0 ? (
             filteredCards.map((card) => (
@@ -157,7 +157,7 @@ const Page = () => {
 
       {/* Mobile Filter Modal */}
       {showFiltersMobile && (
-        <div className="fixed inset-0 bg-black bg-opacity-40 z-50 flex justify-center items-start pt-10 px-4 overflow-auto sm:max-h-[70vh] overflow-y-auto">
+        <div className="fixed inset-0 bg-black bg-opacity-40 z-50 flex justify-center items-start pt-10 px-4 overflow-auto sm:max-h-[70px] overflow-y-auto">
           <div className="bg-white w-full max-w-md rounded p-6 shadow-lg">
             <div className="flex justify-between items-center mb-4">
               <h2 className="font-bold text-xl">Filters</h2>
@@ -186,7 +186,7 @@ const Page = () => {
               <button
                 className="px-4 py-2 border rounded"
                 onClick={() => {
-                  // Reset all filters
+
                   setSelectedGenres([]);
                   setSelectedLanguages([]);
                   setSelectedOthers([]);

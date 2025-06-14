@@ -13,6 +13,7 @@
     "clsx": "^2.1.1",
     "daisyui": "^5.0.43",
     "lucide-react": "^0.511.0",
+    "mongoose": "^8.15.2",
     "next": "15.3.3",
     "postcss": "^8.5.4",
     "react": "^19.0.0",
