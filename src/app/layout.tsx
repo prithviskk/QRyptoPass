@@ -30,7 +30,7 @@ export default function RootLayout({
       >
         <Navbar />
         {/* main should expand to fill remaining space */}
-        <main className="flex-grow ml-[70px]">
+        <main className="mt-[66px]">
           {children}
         </main>
         <Footer />
