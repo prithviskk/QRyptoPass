@@ -2,7 +2,9 @@
 
 const page = () => {
   return (
-    <div>Ellam sarath paathupan</div>
+    <div>
+      Welcome to Home Page!
+    </div>
   )
 }
 
